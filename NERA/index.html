@@ -142,7 +142,9 @@ Generation of 3D Objects with Large Nonrigid Deformations" />
                         style="width:100%; height:auto;"
                     >
                     <p class="text-justify" style="margin-top: 10px; font-style: italic; color: #666;">
-                        <!-- Add caption here -->
+                        Figure 1: Illustration of geodesic path computation and deformation transfer with our method. (a) shows the geodesic path between two
+                        vertebrae aligned using our semantic correspondence method. (b) shows the deformation from 𝑓1 to 𝑓2 transferred to 𝑓3, generating
+                        intermediate surfaces for 𝑡 ∈ [0, 1] and the final transferred pose 𝑓4 at 𝑡 = 1.
                     </p>
                 </div>
             </div>
@@ -176,7 +178,12 @@ Generation of 3D Objects with Large Nonrigid Deformations" />
                         style="width:100%; height:auto;"
                     >
                     <p class="text-justify" style="margin-top: 10px; font-style: italic; color: #666;">
-                        <!-- Add caption here -->
+                        Figure 2: Overview of our approach. Given two aligned surfaces 𝑓1 and 𝑓2, we compute their SRNFs as 𝑞1 = √𝑎1 ˆ𝑛1 and 𝑞2 = √𝑎2 ˆ𝑛2,
+                        where 𝑎𝑖 and ˆ𝑛𝑖 denote the local area elements and unit normals, respectively, as shown in (a). To obtain an intermediate surface 𝑓𝑡
+                        along the geodesic path, we first construct 𝑠𝑟𝑛𝑓 𝑡𝑖𝑚𝑒𝑤𝑖𝑡ℎ𝑎𝑟𝑒𝑎𝑛𝑜𝑟𝑚𝑎𝑙 in the SRNF space. We linearly interpolate local area elements
+                        as 𝑎𝑡 = (1 − 𝑡 )𝑎1 + 𝑡𝑎2 and obtain ˆ𝑛𝑡 by interpolating the relative rotation between the oriented tangent frames 𝐵1 and 𝐵2. Each
+                        frame 𝐵𝑖 = [ 𝑢𝑖 𝑣𝑖 ˆ𝑛𝑖 ] consist of two orthonormal tangent vectors (𝑢𝑖 , 𝑣𝑖 ) and the unit normal ˆ𝑛𝑖 , as shown in (b). Finally, our
+                        learned SRNF inversion maps 𝑞𝑡 back to the surface space to recover 𝑓𝑡 = 𝐹𝜃 (𝑞𝑡 ).
                     </p>
                 </div>
             </div>
@@ -197,6 +204,13 @@ Generation of 3D Objects with Large Nonrigid Deformations" />
                         class="img-responsive center-block"
                         style="width:100%; height:auto;"
                     >
+
+                    Figure 3: Effect of the interpolation strategy on the geodesic path between two human poses. We compare (a) direct interpolation of
+                    SRNF maps and (b) our approach, which linearly interpolates local area elements and rotates unit normals using tangent frames. As
+                    shown, separating area and orientation changes reduces shrinkage and produces more natural intermediate poses.
+
+
+
                 </div>
             </div>
         </div>
